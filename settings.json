@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "installMethod": "native",
+  "language": "korean",
+  "outputStyle": "Explanatory",
+  "env": {
+    "MAX_THINKING_TOKENS": "63999",
+    "NODE_ENV": "development"
+  },
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Edit",
+      "NotebookEdit",
+      "Skill",
+      "WebFetch",
+      "WebSearch",
+      "Write",
+      "Read",
+      "Glob",
+      "Grep",
+      "TodoWrite"
+    ],
+    "deny": [
+      "Bash(sudo :*)",
+      "Bash(rm -rf :*)",
+      "Bash(chmod 777 :*)",
+      "Bash(mkfs.:*)",
+      "Bash(dd :*)",
+      "Bash(curl *| bash*)",
+      "Bash(curl *| sh*)",
+      "Bash(wget *| bash*)",
+      "Bash(wget *| sh*)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(./config/credentials.json)"
+    ],
+    "defaultMode": "plan"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "context7@claude-plugins-official": true
+  },
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/changyu/Base"
+      ],
+      "description": "File system access for Base directory"
+    }
+  }
+}
