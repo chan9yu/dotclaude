@@ -32,14 +32,15 @@ if ! command -v jq >/dev/null 2>&1; then
   exit 0
 fi
 
-IFS=$'\t' read -r model cwd < <(
+IFS=$'\t' read -r model cwd cost < <(
   printf '%s' "$input" | jq -r '
     [
       (if .model then
         (if .model | type == "object" then .model.display_name // .model.id
          else .model end)
        else "sonnet" end),
-      (.workspace.current_dir // "")
+      (.workspace.current_dir // ""),
+      (.cost.total_cost_usd // "")
     ] | @tsv
   ' 2>/dev/null
 ) || { printf "statusline: json parse error\n"; exit 0; }
@@ -54,6 +55,12 @@ model=$(printf '%s' "$model" \
 
 dir=$(basename "$cwd" 2>/dev/null || echo "unknown")
 timestamp=$(date "+%H:%M")
+
+# ── Format cost ──────────────────────────────────────────────
+cost_fmt=""
+if [ -n "$cost" ] && [ "$cost" != "null" ]; then
+  cost_fmt=$(printf '$%.2f' "$cost")
+fi
 
 # ── Git info (all with -C and --no-optional-locks) ──────────
 branch="" dirty="" ahead="" behind="" stash_count=""
@@ -126,8 +133,13 @@ if [ -n "$branch" ]; then
 
   # Stash
   if [ -n "$stash_count" ]; then
-    parts="${parts} ${C_DIM}📦${stash_count}${C_RESET}"
+    parts="${parts} ${C_DIM}📦 ${stash_count}${C_RESET}"
   fi
+fi
+
+# Cost
+if [ -n "$cost_fmt" ]; then
+  parts="${parts}  ${C_CYAN}💲 ${cost_fmt}${C_RESET}"
 fi
 
 printf '%b\n' "$parts"
