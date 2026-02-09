@@ -29,10 +29,11 @@ memory/
 *.log
 downloads/
 
-# IDE 설정
+# 로컬 환경 종속
 .DS_Store
 ide/
 plugins/
+skills/
 
 # API 키 (절대 공유 금지!)
 anthropic_key.sh
