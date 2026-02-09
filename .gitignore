@@ -11,6 +11,7 @@ file-history/
 shell-snapshots/
 session-env/
 todos/
+image-cache/
 
 # 통계 및 텔레메트리
 stats-cache.json
