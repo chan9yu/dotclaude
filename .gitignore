@@ -1,0 +1,40 @@
+# 세션 기록 및 히스토리 (민감한 정보 포함 가능)
+projects/
+*.jsonl
+history.jsonl
+
+# 디버그 및 캐시
+debug/
+cache/
+paste-cache/
+file-history/
+shell-snapshots/
+session-env/
+todos/
+
+# 통계 및 텔레메트리
+stats-cache.json
+statsig/
+telemetry/
+
+# 태스크 및 플랜 (개인 작업 내역)
+tasks/
+plans/
+
+# 메모리 파일 (개인 작업 히스토리)
+memory/
+
+# 임시 파일
+*.tmp
+*.log
+downloads/
+
+# IDE 설정
+.DS_Store
+ide/
+plugins/
+
+# API 키 (절대 공유 금지!)
+anthropic_key.sh
+*.key
+*.env
