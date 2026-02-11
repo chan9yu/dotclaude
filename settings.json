@@ -49,16 +49,5 @@
     "code-simplifier@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true,
     "context7@claude-plugins-official": true
-  },
-  "mcpServers": {
-    "filesystem": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/Users/changyu/Base"
-      ],
-      "description": "File system access for Base directory"
-    }
   }
 }
