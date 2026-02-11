@@ -35,6 +35,7 @@ downloads/
 ide/
 plugins/
 skills/
+.serena/
 
 # API 키 (절대 공유 금지!)
 anthropic_key.sh
