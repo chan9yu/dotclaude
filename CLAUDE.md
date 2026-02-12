@@ -11,8 +11,8 @@
 - **React**: 19.x + TypeScript 5.9.x (strict mode)
 - **빌드 도구**: Next.js 16.x (App Router) / Vite 7.x
 - **스타일링**: Tailwind CSS 4.x
-- **패키지 매니저**: pnpm 10.x
-- **런타임**: Node.js 22+
+- **패키지 매니저**: pnpm (latest)
+- **런타임**: Node.js (latest LTS)
 
 ## 코드 스타일 및 컨벤션
 
