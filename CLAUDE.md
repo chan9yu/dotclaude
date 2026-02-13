@@ -16,12 +16,20 @@
 
 ## 코드 스타일 및 컨벤션
 
+### 외부 라이브러리
+
+- `@deprecated` 표시된 API 사용 지양, 최신 지원 API로 대체
+
 ### TypeScript
 
 - strict mode 필수
 - 상대 경로 import 사용 (path aliases 지양)
 - 자동 추론 가능한 리턴 타입은 명시하지 않기
 - 불필요한 주석 금지 (자명한 코드는 주석 없이 작성)
+
+### React
+
+- JSX 인라인 함수 지양: 이벤트 핸들러는 named 함수로 추출 (`onChange={handleChange}` 패턴, `onChange={(e) => ...}` 지양)
 
 ### Import/Export
 
