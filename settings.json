@@ -1,8 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "installMethod": "native",
-  "language": "korean",
-  "outputStyle": "Explanatory",
   "env": {
     "MAX_THINKING_TOKENS": "63999",
     "NODE_ENV": "development"
@@ -49,5 +46,8 @@
     "code-simplifier@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true,
     "context7@claude-plugins-official": true
-  }
+  },
+  "outputStyle": "Explanatory",
+  "language": "korean",
+  "installMethod": "native"
 }
