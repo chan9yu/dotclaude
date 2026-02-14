@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "env": {
-    "MAX_THINKING_TOKENS": "63999",
-    "NODE_ENV": "development"
-  },
+  "model": "sonnet",
+  "language": "korean",
+  "outputStyle": "Explanatory",
+  "cleanupPeriodDays": 30,
   "permissions": {
     "allow": [
       "Bash",
@@ -15,8 +15,12 @@
       "Write",
       "Read",
       "Glob",
-      "Grep",
-      "TodoWrite"
+      "Grep"
+    ],
+    "ask": [
+      "Bash(git push :*)",
+      "Bash(git merge :*)",
+      "Bash(git rebase :*)"
     ],
     "deny": [
       "Bash(sudo :*)",
@@ -28,10 +32,16 @@
       "Bash(curl *| sh*)",
       "Bash(wget *| bash*)",
       "Bash(wget *| sh*)",
-      "Read(./.env)",
-      "Read(./.env.*)",
-      "Read(./secrets/**)",
-      "Read(./config/credentials.json)"
+      "Bash(git push --force :*)",
+      "Bash(git push -f :*)",
+      "Bash(git push --force-with-lease :*)",
+      "Bash(git reset --hard :*)",
+      "Bash(git clean -fd :*)",
+      "Bash(git checkout -- :*)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/secrets/**)",
+      "Read(**/credentials.json)"
     ],
     "defaultMode": "plan"
   },
@@ -45,9 +55,9 @@
     "code-review@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true,
-    "context7@claude-plugins-official": true
+    "context7@claude-plugins-official": true,
+    "serena@claude-plugins-official": true,
+    "github@claude-plugins-official": true
   },
-  "outputStyle": "Explanatory",
-  "language": "korean",
   "installMethod": "native"
 }
