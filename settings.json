@@ -1,9 +1,13 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "model": "sonnet",
+  "installMethod": "native",
+  "model": "haiku",
   "language": "korean",
   "outputStyle": "Explanatory",
   "cleanupPeriodDays": 30,
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
   "permissions": {
     "allow": [
       "Bash",
@@ -16,11 +20,6 @@
       "Read",
       "Glob",
       "Grep"
-    ],
-    "ask": [
-      "Bash(git push :*)",
-      "Bash(git merge :*)",
-      "Bash(git rebase :*)"
     ],
     "deny": [
       "Bash(sudo :*)",
@@ -43,6 +42,11 @@
       "Read(**/secrets/**)",
       "Read(**/credentials.json)"
     ],
+    "ask": [
+      "Bash(git push :*)",
+      "Bash(git merge :*)",
+      "Bash(git rebase :*)"
+    ],
     "defaultMode": "plan"
   },
   "statusLine": {
@@ -57,7 +61,7 @@
     "feature-dev@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
     "serena@claude-plugins-official": true,
-    "github@claude-plugins-official": true
-  },
-  "installMethod": "native"
+    "github@claude-plugins-official": true,
+    "figma@claude-plugins-official": true
+  }
 }

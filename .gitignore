@@ -21,6 +21,7 @@ telemetry/
 # 태스크 및 플랜 (개인 작업 내역)
 tasks/
 plans/
+teams/
 
 # 메모리 파일 (개인 작업 히스토리)
 memory/
