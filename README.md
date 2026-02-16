@@ -30,13 +30,21 @@
 
 ## 사용법
 
+### 1. 저장소 클론
+
 이 저장소를 `~/.claude/`에 클론한다.
 
 ```bash
 git clone https://github.com/<username>/dotclaude.git ~/.claude
 ```
 
-`settings.json`의 `mcpServers` 경로는 로컬 환경에 맞게 수정한다. `ide/`, `plugins/`, `skills/`, `image-cache/`는 `.gitignore`로 제외되어 있으므로 디바이스별로 별도 관리한다.
+### 2. MCP 서버 설정
+
+선호하는 MCP 서버 목록과 설정 방법은 [`mcp-servers.md`](./mcp-servers.md)를 참조한다.
+
+### 3. 기타
+
+`ide/`, `plugins/`, `skills/`, `image-cache/`는 `.gitignore`로 제외되어 있으므로 디바이스별로 별도 관리한다.
 
 ## 요구 사항
 
