@@ -47,20 +47,3 @@ GitLab API 연동. MR 조회, 이슈 관리, 파이프라인 확인 등을 지�
 	}
 }
 ```
-
-### Figma
-
-> 출처: Figma 공식 제공 ([Figma MCP Server](https://github.com/nichochar/figma-mcp))
-
-Figma 디자인 파일 연동. 디자인 스펙 조회 및 컴포넌트 정보를 가져올 수 있다.
-
-**사용 프로세스**: HTTP 타입으로 설정 후, 첫 사용 시 브라우저에서 OAuth 인증을 진행하면 자동 연동된다.
-
-```json
-{
-	"figma": {
-		"type": "http",
-		"url": "https://mcp.figma.com/mcp"
-	}
-}
-```
