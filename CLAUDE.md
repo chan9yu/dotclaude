@@ -1,59 +1,53 @@
-## 언어 및 커뮤니케이션 규칙
+## 언어 규칙
 
-- 기본 응답 언어: 한국어
-- 코드 주석: 한국어로 작성
-- 커밋 메시지: 한국어로 작성
-- 문서화: 한국어로 작성
-- 변수명/함수명: 영어 (코드 표준 준수)
+- 응답/주석/커밋/문서: 한국어, 변수명/함수명: 영어
 
 ## 기술 스택
 
-- **React**: 19.x + TypeScript 5.9.x (strict mode)
-- **빌드 도구**: Next.js 16.x (App Router) / Vite 7.x
-- **스타일링**: Tailwind CSS 4.x
-- **패키지 매니저**: pnpm (latest)
-- **런타임**: Node.js (latest LTS)
+- React 19 + TypeScript 5.9 (strict mode)
+- Next.js 16 (App Router) / Vite 7.x
+- Tailwind CSS 4, pnpm
 
-## 코드 스타일 및 컨벤션
+## TypeScript
 
-### 외부 라이브러리
+- strict mode, 상대 경로 import (path aliases 지양)
+- 리턴 타입 자동 추론, 불필요한 주석 금지
+- `React.MouseEvent` 등 `React.*` 네임스페이스 접근 금지 → `import type { MouseEvent } from "react"` 직접 import
 
-- `@deprecated` 표시된 API 사용 지양, 최신 지원 API로 대체
+## React 19
 
-### TypeScript
+- `use(Context)`, `<Context value={...}>`, ref는 일반 prop (`forwardRef` 금지)
+- 내장 유틸리티 타입(`PropsWithChildren` 등) 활용 (커스텀 재정의 금지)
+- JSX 인라인 함수 지양 → named 함수로 추출
+- 컴포넌트 내부 함수는 화살표 함수 사용 (`function handleX()` ❌ → `const handleX = () =>` ✅)
+- `useCallback`/`useMemo`: Context Provider value 안정성 용도로만
 
-- strict mode 필수
-- 상대 경로 import 사용 (path aliases 지양)
-- 자동 추론 가능한 리턴 타입은 명시하지 않기
-- 불필요한 주석 금지 (자명한 코드는 주석 없이 작성)
+## Import/Export
 
-### React
-
-- JSX 인라인 함수 지양: 이벤트 핸들러는 named 함수로 추출 (`onChange={handleChange}` 패턴, `onChange={(e) => ...}` 지양)
-
-### Import/Export
-
-- Named exports 우선 (default export 지양)
-- Import 순서: external → internal → relative
-- 배럴 파일(index.ts) 사용으로 import 구문 최적화
+- Named exports 우선 (프레임워크 요구사항 예외)
+- 순서: external → internal → relative
+- 배럴 파일(index.ts)로 모듈 간 접근 (직접 파일 경로 import 금지)
+- 새 모듈 추가 시 배럴 파일에 re-export 추가
 
 ## 프로젝트 구조
 
 - **Feature-based**: `src/features/[feature]/components|types|services`
-- **Shared**: `src/shared/components|utils|types`
-- **Next.js**: `app/` (App Router), Server/Client Component 명확히 구분
-- **파일명**: 컴포넌트 PascalCase, utils/hooks camelCase
+- **Shared**: `src/shared/ui|layouts|hooks|utils`
+- 파일명: 컴포넌트 PascalCase, utils/hooks camelCase
+- `_components` 디렉토리 사용 금지
+
+## 접근성 (a11y)
+
+- 모달: `aria-labelledby` (`useId()` + Context)
+- 트리거: `aria-expanded`, 로딩 버튼: `aria-busy`
+- 아이콘 버튼: `aria-label`, 장식 아이콘: `aria-hidden="true"`
 
 ## 개발 워크플로우
 
-- **Pre-commit**: lefthook + Lint-staged (자동 린팅/포매팅)
-- **모노레포**: pnpm workspace
-- **커밋**: 사용자가 명시적으로 요청하지 않는 한 자동 커밋 금지
-- **커밋 단위**: 한꺼번에 커밋하지 않고 작은 작업 단위로 쪼개서 커밋
+- Pre-commit: lefthook + Lint-staged
+- 커밋: 명시적 요청 시에만, 작은 단위로
 
-## 문제 해결 원칙
+## 문제 해결
 
-- 이슈는 근본 원인 분석 후 해결
-- setTimeout/setInterval을 이용한 의미 없는 타이머로 이슈 우회 금지
-- 임시 플래그 변수 선언으로 이슈 우회 금지
-- **다시 한 번 강조: 의미 없는 타이머는 절대 금지**
+- 근본 원인 분석 후 해결
+- 의미 없는 타이머(setTimeout/setInterval), 임시 플래그 금지
