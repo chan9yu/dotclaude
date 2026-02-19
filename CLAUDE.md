@@ -10,7 +10,7 @@
 
 ## TypeScript
 
-- strict mode, 상대 경로 import (path aliases 지양)
+- strict mode, `@/*` 절대 경로 import (상대 경로 `../`, `./` 사용 금지, barrel file 내부 re-export 제외)
 - 리턴 타입 자동 추론, 불필요한 주석 금지
 - `React.MouseEvent` 등 `React.*` 네임스페이스 접근 금지 → `import type { MouseEvent } from "react"` 직접 import
 
@@ -25,7 +25,7 @@
 ## Import/Export
 
 - Named exports 우선 (프레임워크 요구사항 예외)
-- 순서: external → internal → relative
+- 순서: external → internal (`@/*`)
 - 배럴 파일(index.ts)로 모듈 간 접근 (직접 파일 경로 import 금지)
 - 새 모듈 추가 시 배럴 파일에 re-export 추가
 

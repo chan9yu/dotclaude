@@ -30,6 +30,7 @@ memory/
 *.tmp
 *.log
 downloads/
+backups/
 
 # 로컬 환경 종속
 .DS_Store
