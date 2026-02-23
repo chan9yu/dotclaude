@@ -61,5 +61,7 @@
   },
   "outputStyle": "Explanatory",
   "language": "korean",
-  "installMethod": "native"
+  "teammateMode": "tmux",
+  "installMethod": "native",
+  "skipDangerousModePermissionPrompt": true
 }
