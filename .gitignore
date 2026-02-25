@@ -31,6 +31,7 @@ memory/
 *.log
 downloads/
 backups/
+mcp-needs-auth-cache.json
 
 # 로컬 환경 종속
 .DS_Store

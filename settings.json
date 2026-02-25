@@ -57,11 +57,12 @@
     "feature-dev@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
     "serena@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true
+    "playwright@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
   },
   "outputStyle": "Explanatory",
   "language": "korean",
+  "skipDangerousModePermissionPrompt": true,
   "teammateMode": "tmux",
-  "installMethod": "native",
-  "skipDangerousModePermissionPrompt": true
+  "installMethod": "native"
 }
