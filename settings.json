@@ -87,17 +87,6 @@
           }
         ]
       }
-    ],
-    "TaskCompleted": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash ~/.claude/hooks/discord-notify.sh",
-            "timeout": 10
-          }
-        ]
-      }
     ]
   }
 }

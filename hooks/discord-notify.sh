@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Discord notification hook for Claude Code
-# Sends Discord Webhook notifications on Stop, Notification, and TaskCompleted events
+# Sends Discord Webhook notifications on Stop and Notification events
 set -euo pipefail
 
 # ── .env 로딩 ────────────────────────────────────────────────
