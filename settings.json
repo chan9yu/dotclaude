@@ -64,5 +64,40 @@
   "language": "korean",
   "skipDangerousModePermissionPrompt": true,
   "teammateMode": "tmux",
-  "installMethod": "native"
+  "installMethod": "native",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/discord-notify.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/discord-notify.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "TaskCompleted": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/discord-notify.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
 }
