@@ -9,6 +9,7 @@
 | claude-plugins-official  | anthropics/claude-plugins-official    |
 | superpowers-marketplace  | obra/superpowers-marketplace         |
 | claude-context-mode      | mksglu/claude-context-mode           |
+| omc                      | nicobailon/omc                       |
 
 ## MCP 서버 플러그인
 
@@ -19,6 +20,12 @@
 | context7   | Upstash   | 라이브러리 문서 실시간 조회                  |
 | serena     | Oraios    | 시맨틱 코드 분석 (LSP 기반)                  |
 | playwright | Microsoft | 브라우저 자동화 (스크린샷, 클릭, 폼 입력 등) |
+
+## 오케스트레이션 플러그인
+
+| 플러그인           | 설명                                                                 |
+| ------------------ | -------------------------------------------------------------------- |
+| oh-my-claudecode   | 멀티에이전트 오케스트레이션 (autopilot, ralph, team, HUD 등)         |
 
 ## 개발 워크플로우 플러그인
 
