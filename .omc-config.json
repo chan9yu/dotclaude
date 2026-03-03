@@ -1,0 +1,9 @@
+{
+  "defaultExecutionMode": "ultrawork",
+  "hudEnabled": true,
+  "team": {
+    "maxAgents": 5,
+    "defaultAgentType": "executor",
+    "displayMode": "tmux"
+  }
+}

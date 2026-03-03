@@ -26,6 +26,11 @@ teams/
 # 메모리 파일 (개인 작업 히스토리)
 memory/
 
+# OMC 런타임 상태
+.omc/
+.session-stats.json
+CLAUDE.md.backup.*
+
 # 임시 파일
 *.tmp
 *.log
