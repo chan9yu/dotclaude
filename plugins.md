@@ -8,6 +8,7 @@
 | ------------------------ | ------------------------------------ |
 | claude-plugins-official  | anthropics/claude-plugins-official    |
 | superpowers-marketplace  | obra/superpowers-marketplace         |
+| claude-context-mode      | mksglu/claude-context-mode           |
 
 ## MCP 서버 플러그인
 
@@ -17,7 +18,6 @@
 | ---------- | --------- | ------------------------------------------- |
 | context7   | Upstash   | 라이브러리 문서 실시간 조회                  |
 | serena     | Oraios    | 시맨틱 코드 분석 (LSP 기반)                  |
-| pinecone   | Pinecone  | Pinecone 벡터 DB 연동                        |
 | playwright | Microsoft | 브라우저 자동화 (스크린샷, 클릭, 폼 입력 등) |
 
 ## 개발 워크플로우 플러그인
@@ -29,5 +29,5 @@
 | code-simplifier | 코드 단순화 및 리팩토링                                             |
 | frontend-design | UI/UX 구현 스킬                                                     |
 | typescript-lsp  | TypeScript/JavaScript 코드 인텔리전스 (go-to-definition, 참조 검색) |
-| ralph-loop      | 에이전트 반복 실행 루프                                              |
 | superpowers     | 구조화된 개발 워크플로우 스킬 모음 (TDD, 디버깅, 플래닝 등)         |
+| context-mode    | 컨텍스트 윈도우 절약 (대량 출력을 샌드박스에서 처리)                 |

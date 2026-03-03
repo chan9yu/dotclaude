@@ -6,29 +6,31 @@
 
 ```
 .claude/
-├── CLAUDE.md            # 프로젝트 지침 (언어, 기술 스택, 코드 컨벤션)
+├── CLAUDE.md            # 전역 지침 (언어, 문제 해결)
 ├── settings.json        # Claude Code 설정 (권한, 플러그인, 훅)
 ├── hooks/               # 이벤트 훅 스크립트
 │   ├── discord-notify.sh  # Discord Webhook 알림
 │   ├── .env.example       # 환경 변수 템플릿
 │   └── .env               # 환경 변수 (gitignore)
 ├── output-styles/       # 응답 스타일 프리셋
-└── statusline.sh        # 상태바 스크립트 (시각, 모델, Git 상태, 세션 비용)
+├── statusline.sh        # 상태바 스크립트 (시각, 모델, Git 상태, 세션 비용)
+├── hooks.md             # 훅 설정 문서
+├── mcp-servers.md       # MCP 서버 설정 문서
+└── plugins.md           # 플러그인 목록 문서
 ```
 
 ## 설정 요약
 
-**CLAUDE.md** — 모든 프로젝트에 적용되는 글로벌 지침.
+**CLAUDE.md** — 모든 프로젝트에 적용되는 전역 지침.
 
-- 응답 언어: 한국어 / 변수명: 영어
-- 기술 스택: React 19 + TypeScript (strict), Next.js 16 / Vite 7, Tailwind CSS 4
-- 컨벤션: named exports 우선, feature-based 구조, 불필요한 주석 금지
+- 텍스트 출력: 한국어 / 코드 식별자: 영어
+- 문제 해결: 근본 원인 분석 (임시 우회 금지)
 
 **settings.json** — 권한, 환경 변수, 플러그인 설정.
 
 - 위험 명령어 차단 (`sudo`, `rm -rf`, pipe-to-shell 등)
 - 민감 파일 읽기 차단 (`.env`, `credentials.json`)
-- 활성 플러그인: frontend-design, typescript-lsp, code-review, code-simplifier, feature-dev, context7, serena, playwright, superpowers
+- 활성 플러그인: frontend-design, typescript-lsp, code-review, code-simplifier, feature-dev, context7, serena, playwright, superpowers, context-mode
 - 훅: Stop, Notification → Discord Webhook 알림
 
 **hooks/discord-notify.sh** — 작업 종료/알림 시 Discord 채널에 Embed 카드 전송. 상세 설정은 [`hooks.md`](./hooks.md) 참조.
