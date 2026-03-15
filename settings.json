@@ -82,12 +82,12 @@
     "context7@claude-plugins-official": true,
     "serena@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true,
-    "context-mode@claude-context-mode": true,
-    "oh-my-claudecode@omc": true
+    "oh-my-claudecode@omc": true,
+    "skill-creator@claude-plugins-official": true
   },
   "outputStyle": "Explanatory",
   "language": "korean",
+  "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
   "teammateMode": "tmux",
   "installMethod": "native"

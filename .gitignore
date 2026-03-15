@@ -1,7 +1,7 @@
 # 세션 기록 및 히스토리 (민감한 정보 포함 가능)
 projects/
+sessions/
 *.jsonl
-history.jsonl
 
 # 디버그 및 캐시
 debug/
