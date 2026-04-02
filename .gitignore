@@ -45,6 +45,10 @@ plugins/
 skills/
 .serena/
 
+# 서버 원격 설정 (런타임 자동 생성)
+policy-limits.json
+remote-settings.json
+
 # API 키 (절대 공유 금지!)
 anthropic_key.sh
 *.key

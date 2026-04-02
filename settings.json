@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "cleanupPeriodDays": 30,
+  "cleanupPeriodDays": 90,
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
@@ -33,6 +33,9 @@
       "Bash(git reset --hard :*)",
       "Bash(git clean -fd :*)",
       "Bash(git checkout -- :*)",
+      "Bash(killall :*)",
+      "Bash(pkill -9 :*)",
+      "Bash(npm publish :*)",
       "Read(**/.env)",
       "Read(**/.env.*)",
       "Read(**/secrets/**)",
@@ -67,11 +70,22 @@
           }
         ]
       }
+    ],
+    "TaskCompleted": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/discord-notify.sh",
+            "timeout": 10
+          }
+        ]
+      }
     ]
   },
   "statusLine": {
     "type": "command",
-    "command": "node /Users/changyu/.claude/hud/omc-hud.mjs"
+    "command": "node $HOME/.claude/hud/omc-hud.mjs"
   },
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
@@ -81,9 +95,24 @@
     "feature-dev@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
     "serena@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
     "oh-my-claudecode@omc": true,
-    "skill-creator@claude-plugins-official": true
+    "harness@harness-marketplace": true,
+    "codex@openai-codex": true
+  },
+  "extraKnownMarketplaces": {
+    "harness-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "revfactory/harness"
+      }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
   },
   "outputStyle": "Explanatory",
   "language": "korean",
