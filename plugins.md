@@ -7,7 +7,17 @@
 | 마켓플레이스             | 소스                                 |
 | ------------------------ | ------------------------------------ |
 | claude-plugins-official  | anthropics/claude-plugins-official    |
-| omc                      | nicobailon/omc                       |
+| omc                      | Yeachan-Heo/oh-my-claudecode         |
+| harness-marketplace      | revfactory/harness                   |
+| openai-codex             | openai/codex-plugin-cc               |
+
+## 오케스트레이션 플러그인
+
+| 플러그인           | 마켓플레이스        | 설명                                                         |
+| ------------------ | ------------------- | ------------------------------------------------------------ |
+| oh-my-claudecode   | omc                 | 멀티에이전트 오케스트레이션 (autopilot, ralph, team, HUD 등) |
+| harness            | harness-marketplace | 하네스 구성 — 전문 에이전트 정의 및 스킬 생성 메타 스킬      |
+| codex              | openai-codex        | OpenAI Codex CLI 연동 (rescue, review, task 위임)            |
 
 ## MCP 서버 플러그인
 
@@ -17,13 +27,6 @@
 | ---------- | --------- | ------------------------------------------- |
 | context7   | Upstash   | 라이브러리 문서 실시간 조회                  |
 | serena     | Oraios    | 시맨틱 코드 분석 (LSP 기반)                  |
-| playwright | Microsoft | 브라우저 자동화 (스크린샷, 클릭, 폼 입력 등) |
-
-## 오케스트레이션 플러그인
-
-| 플러그인           | 설명                                                                 |
-| ------------------ | -------------------------------------------------------------------- |
-| oh-my-claudecode   | 멀티에이전트 오케스트레이션 (autopilot, ralph, team, HUD 등)         |
 
 ## 개발 워크플로우 플러그인
 
@@ -32,5 +35,6 @@
 | feature-dev     | 기능 개발 워크플로우 (코드 탐색, 아키텍처 설계, 리뷰)               |
 | code-review     | PR 코드 리뷰 자동화                                                 |
 | code-simplifier | 코드 단순화 및 리팩토링                                             |
+| skill-creator   | 스킬 생성, 수정, 성능 측정                                          |
 | frontend-design | UI/UX 구현 스킬                                                     |
 | typescript-lsp  | TypeScript/JavaScript 코드 인텔리전스 (go-to-definition, 참조 검색) |

@@ -9,6 +9,7 @@
 ├── CLAUDE.md            # 전역 지침 (OMC 오케스트레이션 + 언어/문제 해결)
 ├── settings.json        # Claude Code 설정 (권한, 플러그인, 훅)
 ├── .omc-config.json     # OMC(oh-my-claudecode) 구성 파일
+├── .gitignore           # Git 제외 설정
 ├── hooks/               # 이벤트 훅 스크립트
 │   ├── discord-notify.sh  # Discord Webhook 알림
 │   ├── .env.example       # 환경 변수 템플릿
@@ -18,7 +19,6 @@
 ├── output-styles/       # 응답 스타일 프리셋
 ├── statusline.sh        # (레거시) 기본 상태바 스크립트
 ├── hooks.md             # 훅 설정 문서
-├── mcp-servers.md       # MCP 서버 설정 문서
 └── plugins.md           # 플러그인 목록 문서
 ```
 
@@ -32,10 +32,11 @@
 
 **settings.json** — 권한, 환경 변수, 플러그인 설정.
 
-- 위험 명령어 차단 (`sudo`, `rm -rf`, pipe-to-shell 등)
+- 위험 명령어 차단 (`sudo`, `rm -rf`, `killall`, `pkill -9`, `npm publish`, pipe-to-shell 등)
 - 민감 파일 읽기 차단 (`.env`, `credentials.json`)
-- 활성 플러그인: frontend-design, typescript-lsp, code-review, code-simplifier, feature-dev, context7, serena, playwright, superpowers, context-mode, oh-my-claudecode
-- 훅: Stop, Notification → Discord Webhook 알림
+- 활성 플러그인: frontend-design, typescript-lsp, code-review, code-simplifier, feature-dev, context7, serena, oh-my-claudecode, skill-creator, harness, codex
+- 훅: Stop, Notification, TaskCompleted → Discord Webhook 알림
+- 세션 보존 기간: 90일
 
 **hooks/discord-notify.sh** — 작업 종료/알림 시 Discord 채널에 Embed 카드 전송. 상세 설정은 [`hooks.md`](./hooks.md) 참조.
 
@@ -60,11 +61,7 @@ cp ~/.claude/hooks/.env.example ~/.claude/hooks/.env
 
 상세 설정은 [`hooks.md`](./hooks.md)를 참조한다.
 
-### 3. MCP 서버 설정
-
-선호하는 MCP 서버 목록과 설정 방법은 [`mcp-servers.md`](./mcp-servers.md)를 참조한다.
-
-### 4. 기타
+### 3. 기타
 
 `ide/`, `plugins/`, `skills/`, `image-cache/`는 `.gitignore`로 제외되어 있으므로 디바이스별로 별도 관리한다.
 
