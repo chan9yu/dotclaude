@@ -1,7 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "cleanupPeriodDays": 90,
-  "model": "opusplan",
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
     "CLAUDE_CODE_EFFORT_LEVEL": "max",
@@ -52,6 +51,7 @@
     ],
     "defaultMode": "plan"
   },
+  "model": "opusplan",
   "hooks": {
     "Stop": [
       {
@@ -93,22 +93,18 @@
   },
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
-    "feature-dev@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "oh-my-claudecode@omc": true,
-    "harness@harness-marketplace": true,
     "codex@openai-codex": true,
-    "pm-toolkit@pm-skills": true,
-    "pm-product-strategy@pm-skills": true,
-    "pm-product-discovery@pm-skills": true,
-    "pm-market-research@pm-skills": true,
-    "pm-data-analytics@pm-skills": true,
-    "pm-marketing-growth@pm-skills": true,
-    "pm-go-to-market@pm-skills": true,
-    "pm-execution@pm-skills": true
+    "harness@harness-marketplace": false,
+    "pm-toolkit@pm-skills": false,
+    "pm-product-strategy@pm-skills": false,
+    "pm-product-discovery@pm-skills": false,
+    "pm-market-research@pm-skills": false,
+    "pm-data-analytics@pm-skills": false,
+    "pm-marketing-growth@pm-skills": false,
+    "pm-go-to-market@pm-skills": false,
+    "pm-execution@pm-skills": false
   },
   "extraKnownMarketplaces": {
     "harness-marketplace": {
