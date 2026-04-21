@@ -3,8 +3,7 @@
   "cleanupPeriodDays": 90,
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
-    "CLAUDE_CODE_EFFORT_LEVEL": "max",
-    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1"
+    "ENABLE_PROMPT_CACHING_1H": "1"
   },
   "permissions": {
     "allow": [
@@ -48,9 +47,9 @@
       "Bash(git merge :*)",
       "Bash(git rebase :*)"
     ],
-    "defaultMode": "plan"
+    "defaultMode": "auto"
   },
-  "model": "opusplan",
+  "model": "opus",
   "hooks": {
     "Stop": [
       {
@@ -93,17 +92,19 @@
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "harness@harness-marketplace": false,
     "oh-my-claudecode@omc": true,
     "codex@openai-codex": true,
-    "harness@harness-marketplace": false,
-    "pm-toolkit@pm-skills": false,
-    "pm-product-strategy@pm-skills": false,
-    "pm-product-discovery@pm-skills": false,
-    "pm-market-research@pm-skills": false,
     "pm-data-analytics@pm-skills": false,
-    "pm-marketing-growth@pm-skills": false,
+    "pm-execution@pm-skills": false,
     "pm-go-to-market@pm-skills": false,
-    "pm-execution@pm-skills": false
+    "pm-market-research@pm-skills": false,
+    "pm-marketing-growth@pm-skills": false,
+    "pm-product-discovery@pm-skills": false,
+    "pm-product-strategy@pm-skills": false,
+    "pm-toolkit@pm-skills": false
   },
   "extraKnownMarketplaces": {
     "harness-marketplace": {
@@ -133,8 +134,17 @@
   },
   "outputStyle": "Explanatory",
   "language": "korean",
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
+  "alwaysThinkingEnabled": true,
+  "showThinkingSummaries": true,
+  "autoCompactWindow": 1000000,
+  "autoMemoryEnabled": true,
+  "autoDreamEnabled": true,
+  "tui": "fullscreen",
+  "autoUpdatesChannel": "latest",
+  "viewMode": "default",
   "skipDangerousModePermissionPrompt": true,
+  "skipAutoPermissionPrompt": true,
   "teammateMode": "tmux",
   "installMethod": "native"
 }
