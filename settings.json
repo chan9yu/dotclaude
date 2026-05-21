@@ -21,35 +21,53 @@
     "deny": [
       "Bash(sudo :*)",
       "Bash(rm -rf :*)",
+      "Bash(rm -rf /:*)",
       "Bash(chmod 777 :*)",
+      "Bash(chmod -R 777 :*)",
       "Bash(mkfs.:*)",
       "Bash(dd :*)",
+      "Bash(:* > /dev/sda*)",
       "Bash(curl *| bash*)",
       "Bash(curl *| sh*)",
       "Bash(wget *| bash*)",
       "Bash(wget *| sh*)",
+      "Bash(eval :*)",
       "Bash(git push --force :*)",
       "Bash(git push -f :*)",
       "Bash(git push --force-with-lease :*)",
+      "Bash(git push --force* origin main*)",
+      "Bash(git push --force* origin master*)",
       "Bash(git reset --hard :*)",
       "Bash(git clean -fd :*)",
       "Bash(git checkout -- :*)",
+      "Bash(git branch -D :*)",
       "Bash(killall :*)",
       "Bash(pkill -9 :*)",
       "Bash(npm publish :*)",
+      "Bash(pnpm publish :*)",
+      "Bash(yarn publish :*)",
       "Read(**/.env)",
       "Read(**/.env.*)",
       "Read(**/secrets/**)",
+      "Read(**/.ssh/**)",
+      "Read(**/.aws/credentials)",
       "Read(**/credentials.json)"
     ],
     "ask": [
       "Bash(git push :*)",
+      "Bash(git push origin main*)",
+      "Bash(git push origin master*)",
       "Bash(git merge :*)",
-      "Bash(git rebase :*)"
+      "Bash(git rebase :*)",
+      "Bash(git tag :*)",
+      "Bash(npm install :*)",
+      "Bash(pnpm install :*)",
+      "Bash(npm uninstall :*)",
+      "Bash(brew install :*)",
+      "Bash(brew uninstall :*)"
     ],
     "defaultMode": "auto"
   },
-  "model": "opus",
   "hooks": {
     "Stop": [
       {
@@ -97,14 +115,7 @@
     "harness@harness-marketplace": false,
     "oh-my-claudecode@omc": true,
     "codex@openai-codex": true,
-    "pm-data-analytics@pm-skills": false,
-    "pm-execution@pm-skills": false,
-    "pm-go-to-market@pm-skills": false,
-    "pm-market-research@pm-skills": false,
-    "pm-marketing-growth@pm-skills": false,
-    "pm-product-discovery@pm-skills": false,
-    "pm-product-strategy@pm-skills": false,
-    "pm-toolkit@pm-skills": false
+    "ouroboros@ouroboros": true
   },
   "extraKnownMarketplaces": {
     "harness-marketplace": {
@@ -125,26 +136,28 @@
         "url": "https://github.com/Yeachan-Heo/oh-my-claudecode.git"
       }
     },
-    "pm-skills": {
+    "ouroboros": {
       "source": {
         "source": "github",
-        "repo": "phuryn/pm-skills"
+        "repo": "Q00/ouroboros"
       }
     }
   },
   "outputStyle": "Explanatory",
+  "viewMode": "default",
   "language": "korean",
-  "effortLevel": "xhigh",
   "alwaysThinkingEnabled": true,
-  "showThinkingSummaries": true,
+  "effortLevel": "xhigh",
   "autoCompactWindow": 1000000,
+  "autoUpdatesChannel": "latest",
+  "tui": "fullscreen",
   "autoMemoryEnabled": true,
   "autoDreamEnabled": true,
-  "tui": "fullscreen",
-  "autoUpdatesChannel": "latest",
-  "viewMode": "default",
+  "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
-  "skipAutoPermissionPrompt": true,
   "teammateMode": "tmux",
+  "skipAutoPermissionPrompt": true,
+  "model": "claude-opus-4-7",
+  "includeCoAuthoredBy": true,
   "installMethod": "native"
 }

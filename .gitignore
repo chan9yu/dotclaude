@@ -29,6 +29,7 @@ memory/
 # OMC 런타임 상태
 .omc/
 .session-stats.json
+.last-cleanup
 CLAUDE.md.backup.*
 
 # 임시 파일
