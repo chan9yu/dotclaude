@@ -6,6 +6,6 @@
     "defaultAgentType": "executor",
     "displayMode": "tmux"
   },
-  "setupCompleted": "2026-04-02T10:22:45+09:00",
-  "setupVersion": "4.14.1"
+  "setupCompleted": "2026-06-14T14:24:09+09:00",
+  "setupVersion": "4.14.6"
 }

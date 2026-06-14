@@ -5,6 +5,7 @@
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
     "ENABLE_PROMPT_CACHING_1H": "1"
   },
+  "includeCoAuthoredBy": true,
   "permissions": {
     "allow": [
       "Bash",
@@ -105,7 +106,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "node $HOME/.claude/hud/omc-hud.mjs"
+    "command": "node ${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hud/omc-hud.mjs"
   },
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
@@ -113,9 +114,7 @@
     "superpowers@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "harness@harness-marketplace": false,
-    "oh-my-claudecode@omc": true,
-    "codex@openai-codex": true,
-    "ouroboros@ouroboros": true
+    "oh-my-claudecode@omc": true
   },
   "extraKnownMarketplaces": {
     "harness-marketplace": {
@@ -124,22 +123,10 @@
         "repo": "revfactory/harness"
       }
     },
-    "openai-codex": {
-      "source": {
-        "source": "github",
-        "repo": "openai/codex-plugin-cc"
-      }
-    },
     "omc": {
       "source": {
         "source": "git",
         "url": "https://github.com/Yeachan-Heo/oh-my-claudecode.git"
-      }
-    },
-    "ouroboros": {
-      "source": {
-        "source": "github",
-        "repo": "Q00/ouroboros"
       }
     }
   },
@@ -157,7 +144,6 @@
   "skipDangerousModePermissionPrompt": true,
   "teammateMode": "tmux",
   "skipAutoPermissionPrompt": true,
-  "model": "claude-opus-4-7",
-  "includeCoAuthoredBy": true,
-  "installMethod": "native"
+  "installMethod": "native",
+  "model": "opus[1m]"
 }
