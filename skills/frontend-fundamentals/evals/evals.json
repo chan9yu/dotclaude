@@ -1,0 +1,46 @@
+{
+  "skill_name": "frontend-fundamentals",
+  "evals": [
+    {
+      "id": 1,
+      "name": "comprehensive-readability-review",
+      "prompt": "이 OrderStatusCard 컴포넌트가 자꾸 손이 가고 읽기 힘든데 코드 리뷰 좀 해줄 수 있어? 뭘 어떻게 고치면 좋을지 구체적으로 알려줘.",
+      "expected_output": "4가지 기준(특히 가독성)으로 체계적 진단. 게스트/회원 분기 분리, 2592000000 매직 넘버에 이름 붙이기, 이름 없는 복잡한 filter 조건에 이름 붙이기를 지적하고 before/after 개선안을 제시. 각 지적이 '왜 변경하기 어려운가'와 연결되어야 함.",
+      "files": ["inputs/OrderStatusCard.tsx"],
+      "expectations": [
+        "게스트와 회원으로 갈리는 분기를 별도 컴포넌트로 분리(같이 실행되지 않는 코드 분리)하자고 제안한다",
+        "매직 넘버 2592000000(30일/밀리초)에 의미 있는 이름의 상수를 붙이자고 제안한다",
+        "이름 없는 복잡한 재주문 가능 조건(filter + 다중 &&)에 의미 있는 이름(예: isReorderable)을 붙이자고 제안한다",
+        "리뷰가 가독성·예측 가능성·응집도·결합도 같은 명시적 기준(렌즈) 중 하나 이상으로 문제를 분류한다",
+        "지적한 문제에 대해 before/after 형태의 구체적 개선 코드를 제공한다"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "predictability-hooks-review",
+      "prompt": "팀에 PR 올리기 전에 이 알림 관련 코드(notifications.ts) 좀 봐줘. 더 깔끔하고 일관성 있게 만들 수 있을까?",
+      "expected_output": "예측 가능성 관점에서 진단. 반환 타입 불일치를 통일 제안하고, markAsRead의 숨은 로깅을 분리 제안. before/after 제시.",
+      "files": ["inputs/notifications.ts"],
+      "expectations": [
+        "useNotifications(Query 객체 반환)와 useUnreadCount(data 값 반환)의 반환 타입 불일치를 지적한다",
+        "같은 종류의 API 호출 Hook이 일관된 반환 타입(예: 모두 Query 객체)을 갖도록 통일하자고 제안한다",
+        "markAsRead 안에 숨겨진 analytics.track 부수효과(숨은 로직)를 드러내 지적한다",
+        "숨은 로깅을 함수 밖(호출부)으로 분리하자고 제안한다",
+        "리뷰가 예측 가능성 관점을 명시적으로 사용한다"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "coupling-tradeoff-judgment",
+      "prompt": "결제 페이지랑 구독 페이지에 똑같이 확인 다이얼로그 열고 로깅하는 코드가 중복돼서 거슬려. 공통 훅 useConfirmAction으로 빼서 중복 제거해줘.",
+      "expected_output": "무작정 공통화하지 않고 트레이드오프를 제기. 두 코드의 차이(로깅 키·타이틀·실행 함수)를 지적하고, 섣부른 공통화가 결합도를 높임을 경고. 중복 허용이 나을 수 있음을 안내.",
+      "files": ["inputs/payment-subscription.tsx"],
+      "expectations": [
+        "사용자의 '공통 훅으로 빼라'는 요청을 무비판적으로 따르지 않고, 공통화의 위험 또는 트레이드오프를 먼저 제기한다",
+        "두 코드가 이미 로깅 키(payment_ vs subscription_)·다이얼로그 타이틀·실행 함수(pay vs subscribe)에서 다르다는 점을 지적한다",
+        "섣부른 공통화가 결합도를 높여 향후 수정을 어렵게 만들 수 있음(영향 범위 확대, 모든 사용처 테스트 필요 등)을 설명한다",
+        "동작이 갈라질 여지가 있으면 중복 코드를 허용하는 편이 나을 수 있다고 안내하거나, 응집도↔결합도 트레이드오프를 명시한다"
+      ]
+    }
+  ]
+}

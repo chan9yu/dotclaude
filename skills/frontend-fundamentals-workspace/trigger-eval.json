@@ -1,0 +1,22 @@
+[
+  {"query": "방금 만든 OrderList 컴포넌트가 useEffect랑 권한 분기랑 상태가 다 뒤섞여서 뭐가 뭔지 모르겠어. 좀 정리해서 읽기 쉽게 만들어줄 수 있어?", "should_trigger": true},
+  {"query": "PR 올리기 전에 src/hooks/useCheckout.ts 좀 봐줘. 더 깔끔하고 일관성 있게 만들 수 있을까?", "should_trigger": true},
+  {"query": "이 ItemEditModal에서 부모가 자식한테 keyword랑 onConfirm을 4단계나 그대로 내려주고 있는데 이 props drilling 어떻게 풀어야 돼?", "should_trigger": true},
+  {"query": "우리 프론트 코드 곳곳에 delay(300)이나 86400 같은 숫자가 그냥 박혀 있는데, 이런 거 변경하기 쉽게 관리하려면 어떻게 하는 게 좋아?", "should_trigger": true},
+  {"query": "결제 페이지랑 구독 페이지에 거의 똑같은 확인 다이얼로그 로직이 중복인데, 공통 훅으로 합치는 게 맞을까 아니면 그냥 두는 게 나아?", "should_trigger": true},
+  {"query": "리액트 컴포넌트가 자꾸 비대해지는데 어떤 기준으로 쪼개야 나중에 수정하기 편한 코드가 될까?", "should_trigger": true},
+  {"query": "checkIsNameValid는 boolean을 주고 checkIsAgeValid는 객체를 줘서 호출할 때마다 헷갈려. 이런 검증 함수들 반환값을 어떻게 통일하면 좋을지 봐줘", "should_trigger": true},
+  {"query": "this deeply nested ternary in my React component's JSX is impossible to read, how should I refactor it to be cleaner?", "should_trigger": true},
+  {"query": "this custom hook manages 5 different URL query params at once and it keeps growing. is that a code smell? how would you restructure it?", "should_trigger": true},
+  {"query": "fetchBalance 함수가 호출될 때마다 안에서 몰래 analytics 로깅을 하고 있더라. 이런 숨은 동작 어떻게 처리하는 게 좋아?", "should_trigger": true},
+  {"query": "이 React 컴포넌트에서 버튼을 클릭해도 state가 업데이트가 안 돼요. 왜 안 되는지 원인 좀 찾아주세요", "should_trigger": false},
+  {"query": "이 primary 버튼 컴포넌트에 hover, active 마이크로 인터랙션이랑 그림자 좀 넣어서 더 예쁘게 디자인해줘", "should_trigger": false},
+  {"query": "Next.js 프로덕션 빌드가 5분이나 걸려. 번들 사이즈 분석해서 빌드 시간 좀 최적화해줘", "should_trigger": false},
+  {"query": "Express 백엔드 라우터 핸들러들이 한 함수에 너무 많은 책임을 갖고 있어서 서비스 레이어로 분리해서 리팩토링하고 싶어", "should_trigger": false},
+  {"query": "이 머지 정렬 구현 시간복잡도가 O(n^2)인 것 같은데 O(n log n)으로 개선해줄 수 있어?", "should_trigger": false},
+  {"query": "대시보드를 CSS Grid로 반응형 3열 레이아웃으로 만들고 싶은데 grid-template-columns 어떻게 잡아야 돼?", "should_trigger": false},
+  {"query": "이 UserCard 컴포넌트 단위 테스트 좀 작성해줘. Jest랑 React Testing Library 써서 클릭 이벤트까지 커버하게", "should_trigger": false},
+  {"query": "타입스크립트에서 이 제네릭 useQuery 래퍼의 반환 타입 추론이 안 돼서 에러가 나는데, 타입 정의 좀 고쳐줘", "should_trigger": false},
+  {"query": "react-query를 프로젝트에 처음 도입하는데 QueryClientProvider랑 staleTime 기본 설정 어떻게 잡는 게 좋아?", "should_trigger": false},
+  {"query": "우리 디자인 시스템 Figma 토큰을 코드의 theme 변수로 어떻게 연결해서 동기화하지?", "should_trigger": false}
+]

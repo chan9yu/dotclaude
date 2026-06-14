@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "text": "게스트와 회원으로 갈리는 분기를 별도 컴포넌트로 분리(같이 실행되지 않는 코드 분리)하자고 제안한다",
+      "passed": false,
+      "evidence": "정반대 방향. '1. JSX가 게스트/회원 두 갈래로 통째로 중복됨(가장 큰 문제)'으로 보고 공통 div.card 껍데기로 합쳐 버튼만 분기하라고 권함. 별도 컴포넌트 분리는 '과한 추상화이니 보류'로 처리."
+    },
+    {
+      "text": "매직 넘버 2592000000(30일/밀리초)에 의미 있는 이름의 상수를 붙이자고 제안한다",
+      "passed": true,
+      "evidence": "REORDER_WINDOW_MS = 30 * 24 * 60 * 60 * 1000 로 상수화 제안."
+    },
+    {
+      "text": "이름 없는 복잡한 재주문 가능 조건(filter + 다중 &&)에 의미 있는 이름(예: isReorderable)을 붙이자고 제안한다",
+      "passed": true,
+      "evidence": "isReorderable 함수 추출 + some() 사용 제안."
+    },
+    {
+      "text": "리뷰가 가독성·예측 가능성·응집도·결합도 같은 명시적 기준(렌즈) 중 하나 이상으로 문제를 분류한다",
+      "passed": false,
+      "evidence": "'읽기 힘든 이유' 등으로 가독성을 다루지만, 섹션을 문제 유형(JSX 중복/계산/판단 흩어짐/타입 import)으로 나눴을 뿐 4가지 기준 렌즈로 분류·라벨링하지 않음. 'frontend-fundamentals' 기준 체계 부재."
+    },
+    {
+      "text": "지적한 문제에 대해 before/after 형태의 구체적 개선 코드를 제공한다",
+      "passed": true,
+      "evidence": "항목별 개선 코드와 '개선된 전체 코드' 제공."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.6
+  },
+  "notes": [
+    "기술적으로 유능하나 순진한 DRY 직관을 따라 게스트/회원 카드를 통합 — frontend-fundamentals의 '같이 실행되지 않는 코드 분리'와 정반대."
+  ]
+}

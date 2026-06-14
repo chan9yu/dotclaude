@@ -1,0 +1,320 @@
+{
+  "metadata": {
+    "skill_name": "frontend-fundamentals",
+    "skill_path": "/Users/changyu/.claude/skills/frontend-fundamentals",
+    "executor_model": "claude-opus-4-8[1m]",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-06-14T05:42:06Z",
+    "evals_run": [
+      1,
+      2,
+      3
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 110.9,
+        "tokens": 43825,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "게스트와 회원으로 갈리는 분기를 별도 컴포넌트로 분리(같이 실행되지 않는 코드 분리)하자고 제안한다",
+          "passed": true,
+          "evidence": "🔴 항목에서 GuestOrderStatusCard / MemberOrderStatusCard로 완전 분리하고 'references/readability.md 1. 같이 실행되지 않는 코드 분리하기' 패턴을 명시 적용. 게스트 경로의 죽은 canReorder 계산 제거까지 설명."
+        },
+        {
+          "text": "매직 넘버 2592000000(30일/밀리초)에 의미 있는 이름의 상수를 붙이자고 제안한다",
+          "passed": true,
+          "evidence": "REORDER_WINDOW_MS = 30 * 24 * 60 * 60 * 1000 으로 상수화하고, 결과값(2592000000) 대신 계산식으로 두어 '30일' 의미를 드러내라고 제안."
+        },
+        {
+          "text": "이름 없는 복잡한 재주문 가능 조건(filter + 다중 &&)에 의미 있는 이름(예: isReorderable)을 붙이자고 제안한다",
+          "passed": true,
+          "evidence": "isReorderable 함수로 추출하고 내부에서 isDelivered/isNotRefunded/isWithinReorderWindow로 각 조건에 이름 부여. filter(...).length>0 대신 some(isReorderable) 제안."
+        },
+        {
+          "text": "리뷰가 가독성·예측 가능성·응집도·결합도 같은 명시적 기준(렌즈) 중 하나 이상으로 문제를 분류한다",
+          "passed": true,
+          "evidence": "도입부에서 '4가지 렌즈(가독성·예측 가능성·응집도·결합도)로 진단'을 선언하고, 각 항목에 🔴 가독성 / 🟡 가독성+응집도 / 🟢 예측 가능성 식으로 기준을 라벨링."
+        },
+        {
+          "text": "지적한 문제에 대해 before/after 형태의 구체적 개선 코드를 제공한다",
+          "passed": true,
+          "evidence": "각 항목마다 after 코드 블록 제공, 마지막에 '최종 after 전체 코드'까지 제시."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 84.6,
+        "tokens": 34796,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "사용자의 '공통 훅으로 빼라'는 요청을 무비판적으로 따르지 않고, 공통화의 위험 또는 트레이드오프를 먼저 제기한다",
+          "passed": true,
+          "evidence": "제목부터 '공통 훅으로 빼기 전에', 결론 먼저 '지금 바로 공통 훅으로 묶지 않는 것을 권합니다'. 최종 권고 1순위가 '현 상태 유지(중복 허용)'."
+        },
+        {
+          "text": "두 코드가 이미 로깅 키(payment_ vs subscription_)·다이얼로그 타이틀·실행 함수(pay vs subscribe)에서 다르다는 점을 지적한다",
+          "passed": true,
+          "evidence": "(A)~(E) 자리로 분해해 '5개 자리 중 4개가 페이지마다 다릅니다'라고 명시(로그 키 2개·문구·확정 액션)."
+        },
+        {
+          "text": "섣부른 공통화가 결합도를 높여 향후 수정을 어렵게 만들 수 있음(영향 범위 확대, 모든 사용처 테스트 필요 등)을 설명한다",
+          "passed": true,
+          "evidence": "'한쪽을 고치려면 다른 쪽까지 매번 회귀 테스트', '영향 범위가 두 페이지로 묶여버림', useOpenMaintenanceBottomSheet 예시와 동형이라고 설명. 갈라질 변경(약관 추가 등) 구체 예시."
+        },
+        {
+          "text": "동작이 갈라질 여지가 있으면 중복 코드를 허용하는 편이 나을 수 있다고 안내하거나, 응집도↔결합도 트레이드오프를 명시한다",
+          "passed": true,
+          "evidence": "'기본 권고는 중복 허용', '중복을 제거하라 vs 결합도를 낮춰라가 정면충돌', 판단 기준 '미래에 함께 바뀔 운명인가'. 'references 중복 코드 허용하기' 인용."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 100.2,
+        "tokens": 34957,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "useNotifications(Query 객체 반환)와 useUnreadCount(data 값 반환)의 반환 타입 불일치를 지적한다",
+          "passed": true,
+          "evidence": "🔴 예측 가능성 항목에서 'useNotifications → Query 객체 / useUnreadCount → 숫자만' 불일치를 명시, 로딩/에러를 0으로 뭉개는 부작용까지 지적."
+        },
+        {
+          "text": "같은 종류의 API 호출 Hook이 일관된 반환 타입(예: 모두 Query 객체)을 갖도록 통일하자고 제안한다",
+          "passed": true,
+          "evidence": "'API 호출 Hook은 일관되게 Query 객체를 반환', ?? 0 기본값은 호출부에서 정하라고 제안. '같은 종류의 함수는 반환 타입 통일하기' 패턴 인용."
+        },
+        {
+          "text": "markAsRead 안에 숨겨진 analytics.track 부수효과(숨은 로직)를 드러내 지적한다",
+          "passed": true,
+          "evidence": "🔴 'markAsRead에 숨은 부수효과(analytics.track)' 항목에서 이름·반환타입에 안 드러나는 숨은 부수효과로 규정, 일괄 읽음 시 지표 오염 등 설명."
+        },
+        {
+          "text": "숨은 로깅을 함수 밖(호출부)으로 분리하자고 제안한다",
+          "passed": true,
+          "evidence": "after에서 markAsRead는 읽음 처리만 남기고 analytics.track을 onNotificationClick 핸들러로 분리. '숨은 로직 드러내기' 패턴 인용."
+        },
+        {
+          "text": "리뷰가 예측 가능성 관점을 명시적으로 사용한다",
+          "passed": true,
+          "evidence": "도입부 기준 선언 + 각 항목 헤딩에 '🔴 예측 가능성' 라벨 명시."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "failed": 2,
+        "total": 5,
+        "time_seconds": 63.8,
+        "tokens": 23809,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "게스트와 회원으로 갈리는 분기를 별도 컴포넌트로 분리(같이 실행되지 않는 코드 분리)하자고 제안한다",
+          "passed": false,
+          "evidence": "정반대 방향. '1. JSX가 게스트/회원 두 갈래로 통째로 중복됨(가장 큰 문제)'으로 보고 공통 div.card 껍데기로 합쳐 버튼만 분기하라고 권함. 별도 컴포넌트 분리는 '과한 추상화이니 보류'로 처리."
+        },
+        {
+          "text": "매직 넘버 2592000000(30일/밀리초)에 의미 있는 이름의 상수를 붙이자고 제안한다",
+          "passed": true,
+          "evidence": "REORDER_WINDOW_MS = 30 * 24 * 60 * 60 * 1000 로 상수화 제안."
+        },
+        {
+          "text": "이름 없는 복잡한 재주문 가능 조건(filter + 다중 &&)에 의미 있는 이름(예: isReorderable)을 붙이자고 제안한다",
+          "passed": true,
+          "evidence": "isReorderable 함수 추출 + some() 사용 제안."
+        },
+        {
+          "text": "리뷰가 가독성·예측 가능성·응집도·결합도 같은 명시적 기준(렌즈) 중 하나 이상으로 문제를 분류한다",
+          "passed": false,
+          "evidence": "'읽기 힘든 이유' 등으로 가독성을 다루지만, 섹션을 문제 유형(JSX 중복/계산/판단 흩어짐/타입 import)으로 나눴을 뿐 4가지 기준 렌즈로 분류·라벨링하지 않음. 'frontend-fundamentals' 기준 체계 부재."
+        },
+        {
+          "text": "지적한 문제에 대해 before/after 형태의 구체적 개선 코드를 제공한다",
+          "passed": true,
+          "evidence": "항목별 개선 코드와 '개선된 전체 코드' 제공."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 3,
+        "failed": 1,
+        "total": 4,
+        "time_seconds": 57.6,
+        "tokens": 22747,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "사용자의 '공통 훅으로 빼라'는 요청을 무비판적으로 따르지 않고, 공통화의 위험 또는 트레이드오프를 먼저 제기한다",
+          "passed": false,
+          "evidence": "요청대로 useConfirmAction 구현을 바로 제시하고 '훅으로 빼기 좋은 케이스', '지금 상태는 훅으로 빼는 게 적절'이라고 결론. 트레이드오프는 구현 이후 사후적으로 덧붙였을 뿐, 공통화에 제동을 걸지 않음."
+        },
+        {
+          "text": "두 코드가 이미 로깅 키(payment_ vs subscription_)·다이얼로그 타이틀·실행 함수(pay vs subscribe)에서 다르다는 점을 지적한다",
+          "passed": true,
+          "evidence": "'차이가 나는 부분은 딱 네 가지: 로그 이벤트 이름, 다이얼로그 제목, 실행할 액션'으로 명시."
+        },
+        {
+          "text": "섣부른 공통화가 결합도를 높여 향후 수정을 어렵게 만들 수 있음(영향 범위 확대, 모든 사용처 테스트 필요 등)을 설명한다",
+          "passed": true,
+          "evidence": "'주의할 것 — 결합도' 섹션에서 if (eventPrefix === payment) 분기가 끼면 이득이 사라진다고 설명, 한쪽만 달라지면 다시 분리하라고 안내."
+        },
+        {
+          "text": "동작이 갈라질 여지가 있으면 중복 코드를 허용하는 편이 나을 수 있다고 안내하거나, 응집도↔결합도 트레이드오프를 명시한다",
+          "passed": true,
+          "evidence": "'중복 제거가 목적이 아니라 함께 바뀌는 것을 함께 두는 것이 목적'이라며 응집도 원리와 결합도 비용을 대비. 다만 결론은 여전히 '지금은 빼라'."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "failed": 2,
+        "total": 5,
+        "time_seconds": 85.9,
+        "tokens": 24517,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "useNotifications(Query 객체 반환)와 useUnreadCount(data 값 반환)의 반환 타입 불일치를 지적한다",
+          "passed": true,
+          "evidence": "'1. 훅의 반환 타입을 일관되게(가장 중요)'에서 query 객체 vs number 불일치를 명시."
+        },
+        {
+          "text": "같은 종류의 API 호출 Hook이 일관된 반환 타입(예: 모두 Query 객체)을 갖도록 통일하자고 제안한다",
+          "passed": true,
+          "evidence": "선택지 A로 둘 다 useQuery 객체 반환 통일 제안(select로 기본값 처리)."
+        },
+        {
+          "text": "markAsRead 안에 숨겨진 analytics.track 부수효과(숨은 로직)를 드러내 지적한다",
+          "passed": false,
+          "evidence": "markAsRead를 다루지만 초점은 'mutation 승격 + 캐시 무효화 누락'. analytics.track을 '숨은 부수효과/숨은 로직'으로 진단하지 않고, onSuccess 안에 그대로 유지함."
+        },
+        {
+          "text": "숨은 로깅을 함수 밖(호출부)으로 분리하자고 제안한다",
+          "passed": false,
+          "evidence": "analytics.track을 호출부로 분리하지 않고 useMarkAsRead의 onSuccess(훅 내부)에 유지. 로깅을 드러내는 방향이 아니라 캐시 무효화와 함께 묶는 방향."
+        },
+        {
+          "text": "리뷰가 예측 가능성 관점을 명시적으로 사용한다",
+          "passed": true,
+          "evidence": "'예측 가능성이 떨어져요'라고 1번 항목에서 명시적으로 언급."
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 98.5667,
+        "stddev": 13.2259,
+        "min": 84.6,
+        "max": 110.9
+      },
+      "tokens": {
+        "mean": 37859.3333,
+        "stddev": 5167.046,
+        "min": 34796,
+        "max": 43825
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.65,
+        "stddev": 0.0866,
+        "min": 0.6,
+        "max": 0.75
+      },
+      "time_seconds": {
+        "mean": 69.1,
+        "stddev": 14.8758,
+        "min": 57.6,
+        "max": 85.9
+      },
+      "tokens": {
+        "mean": 23691.0,
+        "stddev": 890.8805,
+        "min": 22747,
+        "max": 24517
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.35",
+      "time_seconds": "+29.5",
+      "tokens": "+14168"
+    }
+  },
+  "notes": [
+    "With Skill 100% vs Without Skill 65% (Delta +35%p). 단일 run(run-1)이라 stddev=0 — 분산 분석은 불가, 방향성 신호로만 해석할 것.",
+    "Eval1: baseline은 순진한 DRY로 게스트/회원 카드를 통합 제안. with_skill은 정반대로 별도 컴포넌트 분리 + 중복 허용 판단. 스킬의 핵심 가치가 가장 극명하게 드러난 케이스.",
+    "Eval2: baseline은 analytics.track을 onSuccess에 그대로 유지(숨은 로직 진단 누락)하고 캐시 무효화를 최대 위험으로 봄. with_skill은 숨은 로직으로 규정해 호출부 분리.",
+    "Eval3(트레이드오프): baseline은 트레이드오프를 인식하면서도 요청대로 공통 훅을 구현. with_skill은 \"지금 빼지 마라(중복 허용)\"고 제동 — 유일하게 차별적인 assertion이 여기 1번.",
+    "비차별 assertion 다수: 매직 넘버 이름 붙이기/반환 타입 통일/before-after 제공 등 기본기는 baseline도 통과. 스킬 가치는 방향성 판단에서 갈림 — 향후 evals는 차별적 assertion 비중을 높이면 좋음.",
+    "비용: 스킬이 평균 +29.5s, +14.2k 토큰 더 소비(SKILL.md+references 로딩). 품질 +35%p와의 트레이드오프."
+  ]
+}

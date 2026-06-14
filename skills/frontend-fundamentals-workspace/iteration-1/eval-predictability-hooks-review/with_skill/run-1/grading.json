@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "text": "useNotifications(Query 객체 반환)와 useUnreadCount(data 값 반환)의 반환 타입 불일치를 지적한다",
+      "passed": true,
+      "evidence": "🔴 예측 가능성 항목에서 'useNotifications → Query 객체 / useUnreadCount → 숫자만' 불일치를 명시, 로딩/에러를 0으로 뭉개는 부작용까지 지적."
+    },
+    {
+      "text": "같은 종류의 API 호출 Hook이 일관된 반환 타입(예: 모두 Query 객체)을 갖도록 통일하자고 제안한다",
+      "passed": true,
+      "evidence": "'API 호출 Hook은 일관되게 Query 객체를 반환', ?? 0 기본값은 호출부에서 정하라고 제안. '같은 종류의 함수는 반환 타입 통일하기' 패턴 인용."
+    },
+    {
+      "text": "markAsRead 안에 숨겨진 analytics.track 부수효과(숨은 로직)를 드러내 지적한다",
+      "passed": true,
+      "evidence": "🔴 'markAsRead에 숨은 부수효과(analytics.track)' 항목에서 이름·반환타입에 안 드러나는 숨은 부수효과로 규정, 일괄 읽음 시 지표 오염 등 설명."
+    },
+    {
+      "text": "숨은 로깅을 함수 밖(호출부)으로 분리하자고 제안한다",
+      "passed": true,
+      "evidence": "after에서 markAsRead는 읽음 처리만 남기고 analytics.track을 onNotificationClick 핸들러로 분리. '숨은 로직 드러내기' 패턴 인용."
+    },
+    {
+      "text": "리뷰가 예측 가능성 관점을 명시적으로 사용한다",
+      "passed": true,
+      "evidence": "도입부 기준 선언 + 각 항목 헤딩에 '🔴 예측 가능성' 라벨 명시."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "notes": [
+    "analytics를 묶는 게 응집도 아니냐는 반론까지 트레이드오프 메모로 다룸. query key 응집도는 🟡 보류 가능으로 적절히 낮게 매김."
+  ]
+}

@@ -27,7 +27,6 @@
       "Bash(chmod -R 777 :*)",
       "Bash(mkfs.:*)",
       "Bash(dd :*)",
-      "Bash(:* > /dev/sda*)",
       "Bash(curl *| bash*)",
       "Bash(curl *| sh*)",
       "Bash(wget *| bash*)",
@@ -69,6 +68,7 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "opus[1m]",
   "hooks": {
     "Stop": [
       {
@@ -144,6 +144,5 @@
   "skipDangerousModePermissionPrompt": true,
   "teammateMode": "tmux",
   "skipAutoPermissionPrompt": true,
-  "installMethod": "native",
-  "model": "opus[1m]"
+  "installMethod": "native"
 }

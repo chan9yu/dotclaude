@@ -43,7 +43,6 @@ mcp-needs-auth-cache.json
 .DS_Store
 ide/
 plugins/
-skills/
 .serena/
 
 # 서버 원격 설정 (런타임 자동 생성)
