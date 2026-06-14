@@ -114,7 +114,8 @@
     "superpowers@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "harness@harness-marketplace": false,
-    "oh-my-claudecode@omc": true
+    "oh-my-claudecode@omc": true,
+    "humanize-korean@im-not-ai": true
   },
   "extraKnownMarketplaces": {
     "harness-marketplace": {
@@ -127,6 +128,12 @@
       "source": {
         "source": "git",
         "url": "https://github.com/Yeachan-Heo/oh-my-claudecode.git"
+      }
+    },
+    "im-not-ai": {
+      "source": {
+        "source": "github",
+        "repo": "epoko77-ai/im-not-ai"
       }
     }
   },
