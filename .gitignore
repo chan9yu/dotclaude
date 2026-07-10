@@ -30,7 +30,17 @@ memory/
 .omc/
 .session-stats.json
 .last-cleanup
+.last-update-result.json
 CLAUDE.md.backup.*
+
+# 데몬 및 잡 런타임 상태 (프로세스 실행 흔적, 인증키 포함)
+daemon/
+daemon.lock
+daemon.status.json
+daemon-auth-cooldown
+daemon-auth-status.json
+jobs/
+_workspace/
 
 # 임시 파일
 *.tmp
