@@ -17,7 +17,8 @@
       "Write",
       "Read",
       "Glob",
-      "Grep"
+      "Grep",
+      "mcp__plugin_oh-my-claudecode_t"
     ],
     "deny": [
       "Bash(sudo :*)",
