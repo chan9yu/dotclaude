@@ -53,6 +53,12 @@ ide/
 plugins/
 .serena/
 
+# ~/.agents 저장소를 가리키는 심볼릭 링크 (디바이스별로 다시 생성)
+# 저장소가 직접 관리하는 스킬만 예외로 추적한다.
+skills/*
+!skills/frontend-fundamentals/
+rules
+
 # 서버 원격 설정 (런타임 자동 생성)
 policy-limits.json
 remote-settings.json
