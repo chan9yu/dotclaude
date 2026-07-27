@@ -17,8 +17,7 @@
       "Write",
       "Read",
       "Glob",
-      "Grep",
-      "mcp__plugin_oh-my-claudecode_t"
+      "Grep"
     ],
     "deny": [
       "Bash(sudo :*)",
@@ -69,53 +68,13 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
-  "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash ~/.claude/hooks/discord-notify.sh",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash ~/.claude/hooks/discord-notify.sh",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "TaskCompleted": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash ~/.claude/hooks/discord-notify.sh",
-            "timeout": 10
-          }
-        ]
-      }
-    ]
-  },
   "statusLine": {
     "type": "command",
-    "command": "node ${CLAUDE_CONFIG_DIR:-$HOME/.claude}/hud/omc-hud.mjs"
+    "command": "bash ${CLAUDE_CONFIG_DIR:-$HOME/.claude}/statusline.sh"
   },
   "enabledPlugins": {
-    "frontend-design@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
-    "harness@harness-marketplace": false,
-    "oh-my-claudecode@omc": true,
+    "harness@harness-marketplace": true,
     "humanize-korean@im-not-ai": true
   },
   "extraKnownMarketplaces": {
@@ -123,12 +82,6 @@
       "source": {
         "source": "github",
         "repo": "revfactory/harness"
-      }
-    },
-    "omc": {
-      "source": {
-        "source": "git",
-        "url": "https://github.com/Yeachan-Heo/oh-my-claudecode.git"
       }
     },
     "im-not-ai": {

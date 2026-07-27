@@ -26,12 +26,10 @@ teams/
 # 메모리 파일 (개인 작업 히스토리)
 memory/
 
-# OMC 런타임 상태
-.omc/
+# 런타임 상태 (세션 통계, 정리·업데이트 타임스탬프)
 .session-stats.json
 .last-cleanup
 .last-update-result.json
-CLAUDE.md.backup.*
 
 # 데몬 및 잡 런타임 상태 (프로세스 실행 흔적, 인증키 포함)
 daemon/
