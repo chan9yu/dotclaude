@@ -60,7 +60,18 @@ rules
 
 # 서버 원격 설정 (런타임 자동 생성)
 policy-limits.json
+policy-limits.json.stamp.json
 remote-settings.json
+
+# 런타임 자동 생성 (MCP 탐색 결과, 피드백 초안)
+state/
+feedback/
+
+# 플러그인이 쓰는 모드 플래그 (ponytail 강도 lite, full, ultra)
+.ponytail-active
+
+# Chrome native host 래퍼 (로컬 바이너리 절대 경로 포함, 자동 생성)
+chrome/
 
 # API 키 (절대 공유 금지!)
 anthropic_key.sh
